@@ -1,0 +1,10 @@
+# Example "data.mnc" file
+# Lines beginning "#" are comments
+ &MNC_01
+ pickup_read_mnc=.TRUE.,
+ pickup_write_mnc=.TRUE.,
+ monitor_mnc=.FALSE.,
+ mnc_use_outdir=.TRUE.,
+ mnc_outdir_str='mnc_test_',
+ &
+

@@ -1,0 +1,41 @@
+# Open-boundaries
+ &OBCS_PARM01
+# This flag turns off checking and fixing problematic topography across 
+# open boundaries. We set it here to override the default because
+# we want to reproduce old results (including their bugs).
+
+ OBCSfixTopo=.TRUE.,
+ useOBCSprescribe=.TRUE.,
+# useOBCSsponge=.TRUE.,
+# OBCS_monitorFreq= 1200.,
+
+ OB_Jnorth=360*-1,
+ OB_Jsouth=360*1,
+ OB_Iwest=740*1,
+ OB_Ieast=740*-1,
+
+
+ useOBCStides = .TRUE.,
+#components   = M2       S2     N2       K2       K1      O1       P1       Q1       Mf         Mm
+#periods (hr) = 12.4206  12     12.6583  11.9672  23.9345 25.8193  24.0659  26.8684  327.8599   661.31
+#tidalPeriod  = 44714.16,43200.,45569.88,43081.92,86164.2,92949.48,86637.24,96726.24,1180295.64,2380716.,
+ tidalPeriod  = 44714.16,43200.,86164.2,92949.48,
+
+ OBEAmFile='OBEam.seaice_obcs_01Jan_2019_m2s2k1o1',
+ OBEPhFile='OBEph.seaice_obcs_01Jan_2019_m2s2k1o1',
+ 
+# OBWAmFile='OBWam.seaice_obcs_M2_AM2441cm',
+# OBSPhFile='OBSph.seaice_obcs_M2_AM2441cm',
+# OBNPhFile='OBNph.seaice_obcs_M2_AM2441cm',
+# OBWPhFile='OBWph.seaice_obcs_M2_AM2441cm',
+# OBSAmFile='OBSam.seaice_obcs_M2_AM2441cm',
+# OBNAmFile='OBNam.seaice_obcs_M2_AM2441cm',
+ &
+ 
+# &OBCS_PARM03
+# spongeThickness=08
+# Urelaxobcsinner=7200,
+# Urelaxobcsbound=720,
+# Vrelaxobcsinner=7200,
+# Vrelaxobcsbound=720,
+# & 

@@ -1,0 +1,104 @@
+# ====================
+# | Model parameters |
+# ====================
+#
+# Continuous equation parameters
+ &PARM01
+
+# Initial conditions from WOA data December Temp,salinity profiles
+ 
+ tRef = 27.90262512, 27.90182016, 27.90082944, 27.89943623, 27.89711423,
+        27.89324422, 27.89643346, 27.94396147, 28.03807012, 28.03755122,
+        27.81916609, 27.06279382, 25.34980011, 22.93481767, 19.89091633,
+
+ sRef = 31.94811573, 31.9510902 , 31.95475109, 31.95989922, 31.96847942,
+        31.98277977, 32.11081856, 32.46588087, 32.71130695, 33.15394026,
+        33.75819853, 34.43709927, 34.62751007, 34.78483067, 34.85223671,
+
+ viscAh=100.,  
+ viscAz=1.E-4,
+ useFullLeith=.TRUE.,
+ viscC2leith=2.0, 
+ viscC2leithD=2.0,
+ viscAhGridMax=1.E-2,
+ no_slip_sides=.FALSE.,
+ no_slip_bottom=.TRUE.,
+ tempAdvScheme=33,
+ saltAdvScheme=33,
+ staggerTimeStep=.TRUE.,
+# diffKhT=1.E3,
+ diffKzT=2.E-5,
+# diffKhS=1.E3,
+ diffKzS=2.E-5,
+ tAlpha=2.E-4,
+ sBeta =7.E-4,
+ gravity=9.81,
+ f0=0.0000084,
+ beta=2.28E-11,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ implicitDiffusion=.TRUE.,
+ implicitViscosity=.TRUE.,
+ nonHydrostatic=.FALSE.,
+ bottomDragLinear=0.005,
+# sideDragFactor=2,
+# bottomDragQuadratic=0.001
+ eosType='MDJWF',
+ exactConserv=.TRUE.,
+ hFacMin=0.5,
+# hFacMinDz=5.,
+ hFacInf=0.2,
+ hFacSup=2.0,
+ useSingleCpuIO=.TRUE
+# globalFiles=.TRUE.,
+ readBinaryPrec=64,
+ writeBinaryPrec=64,
+
+ &
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dMaxIters=1000,
+ cg2dTargetResidual=1.E-13,
+ cg3dMaxIters=500,
+ cg3dTargetResidual=1.E-13,
+
+ &
+
+# Time stepping parameters 364days
+ &PARM03
+ startTime=0.,
+ endTime=172800.,
+ deltaTmom=30.0,
+ pChkptFreq=172800.,
+ dumpFreq=86400.,
+# periodicExternalForcing=.TRUE.
+# externForcingPeriod=86400.,
+# externForcingCycle =86400.,
+ &
+
+# Gridding parameters
+ &PARM04
+ usingCurvilinearGrid=.FALSE.,
+ usingCartesianGrid=.TRUE.,
+ usingSphericalPolarGrid=.FALSE.,
+ dxSpacing=111.20,
+ dySpacing=111.20,
+
+## dxSpacing=463.20, dySpacing=463.20,
+
+ 
+ delZ =  0.15,  0.26,  0.32,  0.45,  0.75, 
+         1.25,  3.00,  6.00,  8.00, 10.00,
+        15.00, 15.00, 20.00, 20.00, 25.00,
+        
+
+ radius_fromHorizGrid=6370.E3,
+ &
+
+# Input datasets
+ &PARM05
+ bathyFile='bathy_100m_360_740.bin',
+ checkIniTemp=.false.,
+ checkIniSalt=.false.,
+ &
